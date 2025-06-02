@@ -1,0 +1,12 @@
+<sly data-sly-use.model="com.testproject.core.models.TeamModel" />
+<div class="team">
+    <ul>
+        <sly data-sly-list.member="${model.teamMembers}">
+            <li class="team-member">
+                <img src="${member.image}" alt="${member.name}" />
+                <h3>${member.name}</h3>
+                <p>${member.role}</p>
+            </li>
+        </sly>
+    </ul>
+</div>

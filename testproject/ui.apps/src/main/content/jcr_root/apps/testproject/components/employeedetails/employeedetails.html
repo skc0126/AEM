@@ -1,0 +1,13 @@
+
+<div data-sly-test.empty="${wcmmode.edit }" class="cq-placeholder"
+         data-emptytext="${component.title}"></div>
+<div class= "shubh" data-sly-test=${properties.name}>
+Name-: ${properties.name}</br>
+Age -: ${properties.age}</br>
+Phone number-: ${properties.phoneNumber}</br>
+Company name-: ${properties.company}</br>
+Designation-: ${properties.designation}
+</div>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.all @ categories=['shubhtest.custom']}"/>
+

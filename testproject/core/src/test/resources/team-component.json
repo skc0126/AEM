@@ -1,0 +1,21 @@
+{
+    "team": {
+      "jcr:primaryType": "nt:unstructured",
+      "teamMembers": {
+        "jcr:primaryType": "nt:unstructured",
+        "item0": {
+          "jcr:primaryType": "nt:unstructured",
+          "name": "Alice",
+          "role": "Developer",
+          "image": "/content/dam/team/alice.jpg"
+        },
+        "item1": {
+          "jcr:primaryType": "nt:unstructured",
+          "name": "Bob",
+          "role": "Designer",
+          "image": "/content/dam/team/bob.jpg"
+        }
+      }
+    }
+  }
+  
