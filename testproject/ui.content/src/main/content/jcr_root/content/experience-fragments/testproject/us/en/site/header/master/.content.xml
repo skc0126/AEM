@@ -11,23 +11,23 @@
         sling:resourceType="testproject/components/xfpage">
         <root
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="testproject/components/container"
+            sling:resourceType="testproject/components/core-component/container"
             layout="simple">
             <navigation
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="testproject/components/navigation"
+                sling:resourceType="testproject/components/core-component/navigation"
                 collectAllPages="false"
                 navigationRoot="/content/testproject/us/en"
                 skipNavigationRoot="false"
                 structureDepth="1"/>
             <languagenavigation
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="testproject/components/languagenavigation"
+                sling:resourceType="testproject/components/core-component/languagenavigation"
                 navigationRoot="/content/testproject/us"
                 structureDepth="2"/>
             <search
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="testproject/components/search"
+                sling:resourceType="testproject/components/core-component/search"
                 searchRoot="/content/testproject/us"/>
         </root>
     </jcr:content>

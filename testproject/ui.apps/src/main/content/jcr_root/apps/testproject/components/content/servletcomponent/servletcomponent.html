@@ -1,0 +1,9 @@
+
+<div class="my-button-component" data-current-resource="${resource.path}">
+    <h1 class="header">${properties.header}</h1>
+    <h3 class="title">${properties.title}</h3>
+    <button id="myButton" type="button" onclick="myButtonFunction('Approve')">${properties.approvebuttonlabel}</button>
+    <button id="myButton" type="button" onclick="myButtonFunction('Reject')">${properties.rejectbuttonlabel}</button>
+</div>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='testproject.custom'}" />

@@ -1,0 +1,25 @@
+{
+    "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "admin",
+        "jcr:lastModifiedBy": "admin",
+        "jcr:created": "Tue May 27 2025 16:08:24 GMT+0530",
+        "text": "sfgs",
+        "title": "feger",
+        "jcr:lastModified": "Tue May 27 2025 16:46:48 GMT+0530",
+        "sling:resourceType": "testproject/components/core-component/thirdcomponent",
+        "multifield": {
+          "jcr:primaryType": "nt:unstructured",
+          "item0": {
+            "jcr:primaryType": "nt:unstructured",
+            "eyebrow": "sdfdf",
+            "header": "dvvd"
+          },
+          "item1": {
+            "jcr:primaryType": "nt:unstructured",
+            "eyebrow": "dfgdfn",
+            "header": "gfdgdf"
+          }
+        }
+      }
+}
