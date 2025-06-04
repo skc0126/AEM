@@ -1,0 +1,46 @@
+/* Footer Container */
+#footer-exf-container {
+    background-color: #00274d;
+    padding: 20px;
+    color: #ffffff;
+}
+
+/* Navigation - Inline Layout */
+.cmp-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cmp-list__item {
+    margin: 0 15px;
+}
+
+.cmp-list__item-title {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.cmp-list__item-title:hover {
+    color: #ffcc00;
+}
+
+/* Separator */
+.cmp-separator__horizontal-rule {
+    border: 1px solid #ffffff;
+    margin: 20px auto;
+    width: 80%;
+}
+
+/* Copyright Text */
+.cmp-text {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}

@@ -1,0 +1,81 @@
+package com.testproject.core.servlet;
+
+import org.apache.sling.api.servlets.SlingAllMethodsServlet;
+
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+
+import org.apache.sling.api.servlets.HttpConstants;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.propertytypes.ServiceDescription;
+
+import com.day.cq.search.PredicateGroup;
+import com.day.cq.search.Query;
+import com.day.cq.search.QueryBuilder;
+import com.day.cq.search.result.Hit;
+import com.day.cq.search.result.SearchResult;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
+import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
+
+import javax.jcr.RepositoryException;
+import javax.jcr.Session;
+
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Component(service = Servlet.class)
+@SlingServletResourceTypes(resourceTypes = "testproject/components/page", selectors = "query-builder", methods = HttpConstants.METHOD_POST)
+@ServiceDescription("Query Builder Servlet")
+public class QueryBuilderServlet extends SlingAllMethodsServlet {
+
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    protected void doPost(final SlingHttpServletRequest request, final SlingHttpServletResponse response)
+            throws ServletException, IOException {
+        final Resource resource = request.getResource();
+        ResourceResolver resourceResolver = request.getResourceResolver();
+        Session session = resourceResolver.adaptTo(Session.class);
+        try {
+            JsonArray jsonArray = new JsonArray();
+            Map<String, String> map = new HashMap<>();
+            map.put("type", "cq:Page");
+            map.put("path", "/content/testproject/us/en");
+            map.put("property", "jcr:content/cq:template");
+            map.put("property.value", "/conf/testproject/settings/wcm/templates/content-page-template");
+            map.put("p.limit", "-1");
+            QueryBuilder queryBuilder = resourceResolver.adaptTo(QueryBuilder.class);
+            Query query = queryBuilder.createQuery(PredicateGroup.create(map), session);
+            SearchResult searchResult = query.getResult();
+            List<Hit> hits = searchResult.getHits();
+            for (Hit hit : hits) {
+                JsonObject jsonObject = new JsonObject();
+                jsonObject.addProperty("Path", hit.getPath());
+                jsonArray.add(jsonObject);
+            }
+
+            response.setContentType("application/json");
+            response.getWriter()
+                    .write(jsonArray.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        } catch (RepositoryException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.logout();
+            }
+        }
+
+    }
+}

@@ -1,0 +1,13 @@
+<div data-sly-test.empty="${wcmmode.edit }" class="cq-placeholder"
+         data-emptytext="${component.title}"></div>
+<sly data-sly-use.model="com.testproject.core.models.SecondComponent">
+
+<div class= "shubh" data-sly-test=${model.name}>
+Name-: ${model.name}</br>
+Age -: ${model.age}</br>
+Phone number-: ${model.phoneNumber}</br>
+Company name-: ${model.company}</br>
+Designation-: ${model.designation}
+</div></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.all @ categories=['testproject.custom']}"/>

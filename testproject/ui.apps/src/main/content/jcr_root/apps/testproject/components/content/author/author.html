@@ -1,0 +1,16 @@
+<div data-sly-test.empty="${wcmmode.edit }" class="cq-placeholder"
+         data-emptytext="${component.title}"></div>
+<sly data-sly-use.model="${'com.testproject.core.models.AuthorBook' @rAttribute ='Test'}">
+
+<div class= "shubh" data-sly-test=${model.firstName}>
+    <div>First Name :  ${model.firstName} </div>
+    <div>Lasr Name :  ${model.lastName}   </div>
+    <div>Is Professor:  ${model.professor}  </div>
+    <div>Page Title is:  ${model.pageTitle}  </div>
+    <div>Request Attribute :  ${model.requestAttribute}  </div>
+    <div>Test page name :  ${model.homePageName}  </div>
+    <div>Test page Modified by :  ${model.modifiedBy}  </div>
+</div></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.all @ categories=['testproject.custom']}"/>
+    

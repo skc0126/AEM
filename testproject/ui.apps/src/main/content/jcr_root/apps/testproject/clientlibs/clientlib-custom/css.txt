@@ -15,3 +15,7 @@
 ###############################################################################
 #base=css
 custom.css
+myfirstcomponent.css
+employee-details.css
+header.css
+footer.css

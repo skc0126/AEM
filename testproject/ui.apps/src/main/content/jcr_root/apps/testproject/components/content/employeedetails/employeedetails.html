@@ -1,0 +1,21 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder" data-emptytext="${component.title || 'Drag components here'}"></div>
+</sly>
+<sly data-sly-use.model="com.testproject.core.models.EmployeeDetailsModel">
+
+<sly data-sly-test="${model.name}">
+<div class="employee-details">
+<h2>Employee Details Component</h2>
+<p >Employee name : ${model.name}</p>
+<p>Employee age : ${model.age}</p>
+<p>Employee phone number : ${model.phonenumber}</p>
+<p>Employee Company : ${model.company}</p>
+<p>Employee designation : ${model.designation}</p>
+<sly data-sly-list.modellist="${model.multifield}">
+    <p>Skills : ${modellist.skills}</p>
+</sly>
+
+</div>
+</sly></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='testproject.custom'}"/>
