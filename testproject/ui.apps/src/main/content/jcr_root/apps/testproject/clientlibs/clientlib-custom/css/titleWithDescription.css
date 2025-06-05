@@ -1,0 +1,20 @@
+.title-description-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.title-block {
+    background: #f5f5f5;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.title-block h2 {
+    color: #00274d;
+}
+
+.title-block p {
+    color: #333;
+}

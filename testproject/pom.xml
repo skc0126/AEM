@@ -1462,7 +1462,6 @@ Bundle-DocURL:
   
   
   <profiles>
-                    
     
     
     <!-- Development profile: install only the bundle -->
