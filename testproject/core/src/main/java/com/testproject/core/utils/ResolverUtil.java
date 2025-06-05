@@ -12,7 +12,7 @@ public final class ResolverUtil {
 
     }
 
-	public static final String WKND_SERVICE_USER = "wkndserviceuser";
+	public static final String TEST_SERVICE_USER = "testserviceuser";
     /**
      * @param  resourceResolverFactory factory
      * @return new resource resolver for Sony service user 
@@ -20,7 +20,7 @@ public final class ResolverUtil {
      */
     public static ResourceResolver newResolver( ResourceResolverFactory resourceResolverFactory ) throws LoginException {
         final Map<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put( ResourceResolverFactory.SUBSERVICE, WKND_SERVICE_USER );
+        paramMap.put( ResourceResolverFactory.SUBSERVICE, TEST_SERVICE_USER );
 
         // fetches the admin service resolver using service user.
         ResourceResolver resolver = resourceResolverFactory.getServiceResourceResolver(paramMap);

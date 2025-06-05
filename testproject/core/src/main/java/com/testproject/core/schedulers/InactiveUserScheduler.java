@@ -1,4 +1,4 @@
-package com.testproject.core.scheduler;
+package com.testproject.core.schedulers;
 
 import org.apache.sling.commons.scheduler.Scheduler;
 import org.apache.sling.commons.scheduler.ScheduleOptions;
