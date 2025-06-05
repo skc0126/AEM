@@ -1,4 +1,4 @@
-package com.testproject.core.servlet;
+package com.testproject.core.servlets;
 
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;

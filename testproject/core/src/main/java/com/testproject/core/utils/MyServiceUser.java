@@ -21,11 +21,11 @@ public class MyServiceUser {
         try {
             // Get Resource Resolver using System User
             Map<String, Object> params = new HashMap<>();
-            params.put(ResourceResolverFactory.SUBSERVICE, "wkndserviceuser");
+            params.put(ResourceResolverFactory.SUBSERVICE, "testserviceuser");
             ResourceResolver resolver = resolverFactory.getServiceResourceResolver(params);
 
             // Access JCR Content
-            Resource resource = resolver.getResource("/content/testproject/us/en/magazine");
+            Resource resource = resolver.getResource("/content/testproject/in/en/home");
             if (resource != null) {
                 Node node = resource.adaptTo(Node.class);
                 System.out.println("Node Name: " + node.getName());

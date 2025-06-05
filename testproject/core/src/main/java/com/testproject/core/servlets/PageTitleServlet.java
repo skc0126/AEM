@@ -1,4 +1,4 @@
-package com.testproject.core.servlet;
+package com.testproject.core.servlets;
 
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
