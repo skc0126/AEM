@@ -1,0 +1,12 @@
+
+{
+  "serviceName":"Default Service test Publish",
+  "getServiceCount:Integer":3,
+  "getRunMode":"publish",
+  "getLiveData":true,
+  "getCountries":[
+    "de",
+    "fr",
+    "es"
+  ]
+}
