@@ -1,0 +1,14 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder" data-emptytext="${component.title || 'Drag components here'}"></div>
+</sly>
+<h1>Osgi Service Demo</h1>
+<div data-sly-use.model="com.testproject.core.models.OsgiServiceModel"></div>
+
+<div><p>Service Name : ${model.serviceName} </p></div>
+<div><p>Service Count : ${model.serviceCount} </p></div>
+<div><p>Live Data : ${model.liveData} </p></div>
+<div><p>Run Mode  : ${model.runMode} </p></div>
+<div><p>Countries :${model.countries}</p></div>
+<ul data-sly-list="${model.countries}">
+    <li>${item}</li>
+</ul>
