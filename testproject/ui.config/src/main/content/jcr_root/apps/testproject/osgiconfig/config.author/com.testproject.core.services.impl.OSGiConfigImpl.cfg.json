@@ -1,7 +1,7 @@
 
 {
-  "serviceName":"Default Service 122432434534",
-  "getServiceCount:Integer":535,
+  "serviceName":"Default Service test Author",
+  "getServiceCount:Integer":5,
   "getRunMode":"author",
   "getLiveData":true,
   "getCountries":[
