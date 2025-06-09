@@ -1,0 +1,13 @@
+
+{
+  "serviceName":"Default Service 122432434534",
+  "getServiceCount:Integer":535,
+  "getRunMode":"author",
+  "getLiveData":true,
+  "getCountries":[
+    "de",
+    "en",
+    "fr",
+    "es"
+  ]
+}
