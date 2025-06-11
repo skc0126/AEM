@@ -32,7 +32,7 @@ import java.io.IOException;
 public class SimpleComponentServlet extends SlingAllMethodsServlet {
 
     private static final long serialVersionUID = 1L;
-    private static final Logger log = LoggerFactory.getLogger(PageTitleServlet.class);
+    private static final Logger log = LoggerFactory.getLogger(SimpleComponentServlet.class);
 
     @Override
     protected void doPost(final SlingHttpServletRequest request, final SlingHttpServletResponse response) throws ServletException, IOException {

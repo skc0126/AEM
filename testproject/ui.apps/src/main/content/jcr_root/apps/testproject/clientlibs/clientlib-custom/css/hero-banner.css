@@ -1,0 +1,55 @@
+.hero-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    flex-wrap: nowrap;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.image-description {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    max-width: 90%;
+    box-sizing: border-box;
+}
+
+/* Optional: Responsive text sizing */
+@media (max-width: 768px) {
+    .image-description h3 {
+        font-size: 1.2rem;
+    }
+
+    .image-description p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-description h3 {
+        font-size: 1rem;
+    }
+
+    .image-description p {
+        font-size: 0.9rem;
+    }
+}
