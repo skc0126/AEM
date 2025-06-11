@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        cq:isDelivered="{Boolean}false"
+        cq:lastModified="{Date}2025-06-11T16:53:09.935+05:30"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2025-06-11T16:53:44.179+05:30"
+        cq:lastReplicated_publish="{Date}2025-06-11T16:53:44.179+05:30"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicatedBy_publish="admin"
+        cq:lastReplicationAction="Activate"
+        cq:lastReplicationAction_publish="Activate"
         cq:policy="testproject/components/page/policy"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2,mix:versionable]"
         jcr:primaryType="nt:unstructured"
+        jcr:uuid="99c7edd5-18d3-40be-8c9f-84ef7ce88f75"
         sling:resourceType="wcm/core/components/policies/mappings">
         <root
-            cq:policy="testproject/components/core-component/container/policy_1574694950110"
+            cq:policy="testproject/components/core-component/container/policy_1748939675757"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/core/components/policies/mapping">
             <container
-                cq:policy="testproject/components/core-component/container/policy_1574695586800"
+                cq:policy="testproject/components/core-component/container/policy_1748939675757"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/core/components/policies/mapping"/>
+                sling:resourceType="wcm/core/components/policies/mapping">
+                <container
+                    cq:policy="testproject/components/core-component/container/policy_1748939675757"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/core/components/policies/mapping"/>
+            </container>
         </root>
     </jcr:content>
 </jcr:root>
