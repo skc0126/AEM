@@ -19,3 +19,4 @@ myfirstcomponent.css
 employee-details.css
 header.css
 footer.css
+hero-banner.css

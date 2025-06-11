@@ -1,17 +1,10 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-}
 
 /* Header Exf Container */
 .container #header-exf-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: powderblue;
+    background-color: #00274d;
     padding: 15px 20px;
 }
 
@@ -45,9 +38,50 @@ body {
     background-color: #00509d;
 }
 
+/* Parent Navigation Item */
+.cmp-navigation__item {
+    position: relative;
+    margin-right: 20px;
+}
+
+/* Child Navigation Container (Dropdown) */
+.cmp-navigation__item .cmp-navigation__group {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #00274d;
+    padding: 10px 0;
+    min-width: 200px;
+    z-index: 1000;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Show dropdown on hover */
+.cmp-navigation__item:hover > .cmp-navigation__group {
+    display: flex;
+}
+
+/* Child Navigation Links */
+.cmp-navigation__item .cmp-navigation__item-link {
+    padding: 10px 15px;
+    white-space: nowrap;
+    background-color: #00274d;
+    color: #ffffff;
+
+}
+
+/* Optional: Hover effect for dropdown items */
+.cmp-navigation__item .cmp-navigation__item-link:hover {
+    background-color: #00509d;
+}
+
 /* Search - Aligned to Right */
 .search {
     margin-left: auto;
+    display: flex;
+    align-items: center;
 }
 
 .cmp-search {
@@ -57,37 +91,97 @@ body {
 
 .cmp-search__field {
     position: relative;
+    width: 100%;
 }
 
 .cmp-search__input {
     width: 100%;
-    padding: 10px;
+    padding: 10px 10px 10px 35px; /* Left padding for icon */
     border: 1px solid #ddd;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
+/* Search Icon - Now on the left */
 .cmp-search__icon {
     position: absolute;
-    right: 10px;
+    left: 10px;
     top: 50%;
     transform: translateY(-50%);
     color: #00509d;
+    pointer-events: none;
 }
 
+/* Clear Button - Still on the right */
 .cmp-search__clear {
     position: absolute;
-    right: 35px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0;
 }
 
 .cmp-search__clear-icon {
     color: #aaa;
+    font-size: 16px;
 }
 
 .cmp-search__clear:hover .cmp-search__clear-icon {
     color: #ff0000;
 }
+
+/* Suggestions Dropdown */
+.cmp-search__suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-top: none;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Suggestion Items */
+.cmp-search__suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.cmp-search__suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Highlighted Match */
+.cmp-search__suggestion-highlight {
+    font-weight: bold;
+    color: #00509d;
+}
+
+/* Meta Info (e.g., result count) */
+.cmp-search__suggestion-meta {
+    font-size: 12px;
+    color: #777;
+    margin-left: 10px;
+}
+
+/* Group Labels */
+.cmp-search__suggestion-group {
+    padding: 8px 15px;
+    background-color: #f9f9f9;
+    font-weight: bold;
+    font-size: 13px;
+    color: #555;
+    border-top: 1px solid #eee;
+}
+
+

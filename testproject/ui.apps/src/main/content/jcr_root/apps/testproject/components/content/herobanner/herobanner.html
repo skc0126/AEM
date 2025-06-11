@@ -1,0 +1,21 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder" data-emptytext="${component.title || 'Drag components here'}"></div>
+</sly>
+<sly data-sly-use.model="com.testproject.core.models.HeroBanner">
+
+    <div class="hero-banner">
+        <div class="hero-slider">
+            <sly data-sly-list.image="${model.multifield}">
+                <div class="slide">
+                    <img src="${image.imagePath}" alt="${image.imageAltText}">
+                    <div class="image-description">
+                        <h3>${image.description}</h3>
+                        <p>${image.shortdescription}</p>
+                    </div>
+                </div>
+            </sly>
+        </div>
+    </div>
+
+    <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+        data-sly-call="${clientlib.all @ categories='testproject.custom'}" />
