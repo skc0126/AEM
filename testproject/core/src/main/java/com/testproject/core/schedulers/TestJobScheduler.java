@@ -16,31 +16,37 @@
 package com.testproject.core.schedulers;
 
 import com.testproject.core.config.TestSchedulerConfig;
+import org.apache.sling.commons.scheduler.Job;
+import org.apache.sling.commons.scheduler.JobContext;
 import org.apache.sling.commons.scheduler.Scheduler;
 import org.apache.sling.commons.scheduler.ScheduleOptions;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.metatype.annotations.AttributeDefinition;
+
 import org.osgi.service.metatype.annotations.Designate;
-import org.osgi.service.metatype.annotations.ObjectClassDefinition;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple demo for cron-job like tasks that get executed regularly.
  * It also demonstrates how property values can be set. Users can
  * set the property values in /system/console/configMgr
  */
-@Component(immediate = true, service = Runnable.class)
+@Component(immediate = true, service = Job.class)
 @Designate(ocd=TestSchedulerConfig.class)
-public class TestScheduler implements Runnable {
+public class TestJobScheduler implements Job {
     
 
-    private final Logger logger = LoggerFactory.getLogger(TestScheduler.class);
+    private final Logger logger = LoggerFactory.getLogger(TestJobScheduler.class);
 
-    private int schedulerID;
+    private int schedulerJobID;
 
     @Reference
     private Scheduler scheduler;
@@ -48,29 +54,44 @@ public class TestScheduler implements Runnable {
 
     @Activate
     protected void activate(TestSchedulerConfig config) {
-        schedulerID = config.schedulerName().hashCode();
+        schedulerJobID = config.schedulerName().hashCode();
         addScheduler(config);
     }
 
     @Deactivate
     protected void deactivate(TestSchedulerConfig config) {
-        removeScheduler();
+        removeSchedulerJob();
     }
 
     public void addScheduler(TestSchedulerConfig config){
-     ScheduleOptions scheduleOptions =   scheduler.EXPR(config.cronExpression());
-     scheduleOptions.name(String.valueOf(schedulerID));
-     scheduleOptions.canRunConcurrently(false);
-     scheduler.schedule(this, scheduleOptions);
-     logger.info("=======Scheduler Added=========");
+        ScheduleOptions in = scheduler.EXPR("0 03 17 1/1 * ? *");
+        Map<String, Serializable> inMap=new HashMap<>();
+        inMap.put("country","IN");
+        inMap.put("url","www.in.com");
+        in.config(inMap);
+
+        scheduler.schedule(this,in);
+        ScheduleOptions de = scheduler.EXPR("0 04 17 1/1 * ? *");
+        Map<String, Serializable> deMap=new HashMap<>();
+        deMap.put("country","DE");
+        deMap.put("url","www.de.com");
+        de.config(deMap);
+        scheduler.schedule(this,de);
+
+        ScheduleOptions us = scheduler.EXPR("0 05 17 1/1 * ? *");
+        Map<String, Serializable> usMap=new HashMap<>();
+        usMap.put("country","US");
+        usMap.put("url","www.us.com");
+        us.config(usMap);
+        scheduler.schedule(this,us);
     }
 
-    protected void removeScheduler() {
-        scheduler.unschedule(String.valueOf(schedulerID));
+    protected void removeSchedulerJob() {
+        scheduler.unschedule(String.valueOf(schedulerJobID));
     }
 
     
-    public void run() {
-        logger.debug("TestScheduledTask is now running, schedulerID'{}'", schedulerID);
+    public void execute(JobContext jobContext) {
+        logger.debug("Test Job Scheduler is now running, schedulerJobID'{}'", schedulerJobID);
     }
 }

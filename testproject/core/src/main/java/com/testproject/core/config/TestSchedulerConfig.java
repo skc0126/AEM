@@ -16,6 +16,6 @@ public @interface TestSchedulerConfig {
     public String schedulerName() default "Default Scheduler Name";
 
     @AttributeDefinition(name = "Cron Expression", description = "Cron Expression used by the scheduler", type = AttributeType.STRING)
-    public String cronExpression() default "0/20 * * * * ?"; //run on every 10 sec.
+    public String cronExpression() default "0/10 * * * * ?"; //run on every 10 sec.
 
 }
