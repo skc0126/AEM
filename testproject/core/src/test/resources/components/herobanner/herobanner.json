@@ -1,0 +1,34 @@
+{
+    "data": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:createdBy": "admin",
+    "jcr:lastModifiedBy": "admin",
+    "jcr:created": "Tue Jun 10 2025 21:34:06 GMT+0530",
+    "jcr:lastModified": "Wed Jun 11 2025 15:47:05 GMT+0530",
+    "sling:resourceType": "testproject/components/content/herobanner",
+    "multifield": {
+      "jcr:primaryType": "nt:unstructured",
+      "item0": {
+        "jcr:primaryType": "nt:unstructured",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+        "imagePath": "/content/dam/testproject/language-master/City.jpeg",
+        "imageAltText": "City",
+        "shortdescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      },
+      "item1": {
+        "jcr:primaryType": "nt:unstructured",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+        "imagePath": "/content/dam/testproject/language-master/Animals.png",
+        "imageAltText": "Animal",
+        "shortdescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      },
+      "item2": {
+        "jcr:primaryType": "nt:unstructured",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+        "imagePath": "/content/dam/testproject/language-master/Sports.png",
+        "imageAltText": "Sports",
+        "shortdescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      }
+    }
+    }
+  }

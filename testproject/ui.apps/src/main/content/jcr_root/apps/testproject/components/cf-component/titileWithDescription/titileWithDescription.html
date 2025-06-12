@@ -1,0 +1,15 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder" data-emptytext="${component.title || 'Drag components here'}"></div>
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='testproject.custom1'}"/>
+<sly data-sly-use.model="com.testproject.core.models.TitlewithDescriptionModel">
+    <div class="title-description-container">
+        <sly data-sly-list.item="${model.titleDescriptionList}">
+            <div class="title-block">
+                <h2>Title : ${item.title}</h2>
+                <p>Description : ${item.description}</p>
+            </div>
+        </sly>
+    </div>
+</sly>
