@@ -1,0 +1,127 @@
+/* Container for all event cards */
+.event-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+  
+  /* Individual event card */
+  .event-card {
+    flex: 0 0 calc(25% - 20px); /* 4 cards per row */
+    max-width: calc(25% - 20px);
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* Image styling */
+  .event-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 16px;
+  }
+  
+  /* Title */
+  .event-card h2 {
+    font-size: 1.5rem;
+    color: #00274d;
+    margin: 0 0 10px;
+  }
+  
+  /* Text content */
+  .event-card p {
+    font-size: 1rem;
+    color: #333;
+    margin: 4px 0;
+  }
+  
+  /* Description block */
+  .event-card .description {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #444;
+  }
+  
+  /* Hidden description */
+  .description.hidden {
+    display: none;
+  }
+  
+  /* See More button */
+  .see-more-btn {
+    margin-top: 10px;
+    background-color: #0055a5;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .description .full-text {
+  display: none;
+}
+
+.description .short-text {
+  display: inline;
+}
+
+.description.expanded .short-text {
+  display: none;
+}
+
+.description.expanded .full-text {
+  display: inline;
+}
+
+.toggle-btn {
+  display: inline-block;
+  margin-top: 8px;
+  background-color: transparent;
+  color: #0055a5;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+}
+
+  
+  /* Tablet: 2 cards per row */
+  @media (max-width: 1024px) {
+    .event-card {
+      flex: 0 0 calc(50% - 20px);
+      max-width: calc(50% - 20px);
+    }
+  
+    .event-card h2 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  /* Mobile: 1 card per row */
+  @media (max-width: 600px) {
+    .event-card {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  
+    .event-card h2 {
+      font-size: 1.1rem;
+    }
+  
+    .event-card p,
+    .event-card .description {
+      font-size: 0.9rem;
+    }
+  }
+  
