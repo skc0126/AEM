@@ -1,0 +1,14 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder" data-emptytext="${component.title || 'Drag components here'}"></div>
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.all @ categories='testproject.custom'}" />
+
+<div class="faq-item" data-sly-list="${faqList}">
+    <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('open')">
+        <h4>${item.question}</h4>
+    </div>
+    <div class="faq-answer">
+        ${item.answer @ context='html'}
+    </div>
+</div>

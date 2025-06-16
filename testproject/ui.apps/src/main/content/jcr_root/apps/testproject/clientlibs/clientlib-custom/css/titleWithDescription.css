@@ -1,20 +1,41 @@
 .title-description-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: auto;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .title-block {
     background: #f5f5f5;
     padding: 15px;
-    margin-bottom: 10px;
     border-radius: 5px;
+    flex: 1 1 calc(25% - 20px); /* 4 cards per row with spacing */
+    box-sizing: border-box;
+    min-width: 250px; /* Prevents cards from shrinking too much */
 }
 
 .title-block h2 {
     color: #00274d;
+    margin-top: 0;
 }
 
 .title-block p {
     color: #333;
+}
+
+/* Tablet: 2 cards per row */
+@media (max-width: 1024px) {
+    .title-block {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+/* Mobile: 1 card per row */
+@media (max-width: 600px) {
+    .title-block {
+        flex: 1 1 100%;
+    }
 }

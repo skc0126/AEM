@@ -20,3 +20,5 @@ employee-details.css
 header.css
 footer.css
 hero-banner.css
+titleWithDescription.css
+event-card.css
