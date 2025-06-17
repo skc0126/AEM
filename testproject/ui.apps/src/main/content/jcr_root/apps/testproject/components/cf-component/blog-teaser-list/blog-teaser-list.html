@@ -3,7 +3,7 @@
 </sly>
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientlib.all @ categories='testproject.custom'}"/>
-<sly data-sly-use.model="com.testproject.core.models.TitlewithDescriptionModel">
+<sly data-sly-use.model="com.testproject.core.models.BlogTeaserListModel">
     <div class="title-description-container">
         <sly data-sly-list.item="${model.titleDescriptionList}">
             <div class="title-block">

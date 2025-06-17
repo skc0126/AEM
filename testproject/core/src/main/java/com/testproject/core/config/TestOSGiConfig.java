@@ -1,12 +1,10 @@
 package com.testproject.core.config;
 
-import org.osgi.service.component.annotations.Activate;
-import org.osgi.service.component.annotations.Component;
+
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.AttributeType;
-import org.osgi.service.metatype.annotations.Designate;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
-import org.osgi.service.metatype.annotations.Option;
+
 
 
 
@@ -14,7 +12,7 @@ import org.osgi.service.metatype.annotations.Option;
 public @interface TestOSGiConfig {
 
     @AttributeDefinition(name = "Service name", description = "Enter the name of the service", type = AttributeType.STRING)
-    public String serviceName() default "Default Service Name";
+   String serviceName() default "Default Service Name";
 
     @AttributeDefinition(name = "Service ID", description = "Add service ID", type = AttributeType.INTEGER)
     int getServiceID() default 5;
