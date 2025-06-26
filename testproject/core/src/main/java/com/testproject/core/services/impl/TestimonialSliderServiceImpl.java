@@ -32,7 +32,7 @@ public class TestimonialSliderServiceImpl implements TestimonialSliderService {
     @Override
     public List<Map<String, String>> getTestimonialSliderList() {
         List<Map<String, String>> list = new ArrayList<>();
-        String url = graphqlDomain.getGraphqlDomain() + "/graphql/execute.json/testproject/event-details";
+        String url = graphqlDomain.getGraphqlDomain() + "/graphql/execute.json/testproject/testimonial-slider";
         try (CloseableHttpClient httpClient = HttpClientUtil.createHttpClient(
                 graphqlDomain.getUserName(), graphqlDomain.getPassword())) {
 
@@ -45,26 +45,23 @@ public class TestimonialSliderServiceImpl implements TestimonialSliderService {
 
                 ObjectMapper mapper = new ObjectMapper();
                 JsonNode root = mapper.readTree(jsonResponse);
-                JsonNode items = root.path("data").path("eventDetailsList").path("items");
+                JsonNode items = root.path("data").path("testimonialSliderList").path("items");
 
                 if (items.isArray()) {
                     for (JsonNode item : items) {
-                        String rawEventTitle = item.path("eventTitle").asText();
-                        String eventTitle= HtmlUtils.stripOuterTag(rawEventTitle);
-                        String rawEventDate = item.path("eventDate").asText();
-                        String eventDate= HtmlUtils.stripOuterTag(rawEventDate);
-                        String rawLocation = item.path("location").asText();
-                        String location= HtmlUtils.stripOuterTag(rawLocation);
-                        String rawDescription = item.path("description").path("html").asText();
-                        String description=HtmlUtils.stripOuterTag(rawDescription);
-                        String rawEventImage = item.path("eventImage").path("_path").asText();
-                        String eventImage= HtmlUtils.stripOuterTag(rawEventImage);
+                        String rawCustomerName = item.path("customerName").asText();
+                        String customerName= HtmlUtils.stripOuterTag(rawCustomerName);
+                        String rawRating = item.path("rating").asText();
+                        String rating= HtmlUtils.stripOuterTag(rawRating);
+                        String rawTestimonialText = item.path("testimonialText").path("html").asText();
+                        String testimonialText=HtmlUtils.stripOuterTag(rawTestimonialText);
+                        String rawCustomerImage = item.path("customerImage").path("_path").asText();
+                        String customerImage= HtmlUtils.stripOuterTag(rawCustomerImage);
                         Map<String, String> map = new HashMap<>();
-                        map.put("eventTitle", rawEventTitle);
-                        map.put("eventDate", rawEventDate);
-                        map.put("location", rawLocation);
-                        map.put("eventImage", rawEventImage);
-                        map.put("description", rawDescription);
+                        map.put("customerName", rawCustomerName);
+                        map.put("rating", rawRating);
+                        map.put("customerImage", rawCustomerImage);
+                        map.put("testimonialText", rawTestimonialText);
                         list.add(map);
                     }
                 }

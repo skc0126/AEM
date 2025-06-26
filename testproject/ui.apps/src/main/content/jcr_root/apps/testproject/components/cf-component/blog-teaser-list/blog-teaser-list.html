@@ -1,14 +1,20 @@
 <sly data-sly-test="${wcmmode.edit}">
-    <div class="cq-placeholder" data-emptytext="${component.title || 'Drag components here'}"></div>
+    <div class="cq-placeholder" data-emptytext="${component.title || 'Blog Teasers'}"></div>
 </sly>
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-     data-sly-call="${clientlib.all @ categories='testproject.custom'}"/>
+     data-sly-call="${clientlib.all @ categories='testproject.custom'}" />
 <sly data-sly-use.model="com.testproject.core.models.BlogTeaserListModel">
-    <div class="title-description-container">
-        <sly data-sly-list.item="${model.titleDescriptionList}">
-            <div class="title-block">
-                <h2>${item.title @ context='html'}</h2>
-                <p>${item.description @ context='html'}</p>
+    <div class="blog-teaser-list">
+        <sly data-sly-list.blog="${model.blogTeaserList}">
+            <div class="blog-teaser">
+                <img src="${blog.thumbnail}" alt="${blog.title}" />
+                <h3>${blog.title}</h3>
+                <div class="summary" data-sly-unwrap>
+                    ${blog.summary @ context='html'}
+                </div>
+                <p><strong>Author:</strong> ${blog.author}</p>
+                <p><strong>Published:</strong> ${blog.publishDate}</p>
+                <a href="${blog.readMoreLink}" class="read-more">Read More</a>
             </div>
         </sly>
     </div>

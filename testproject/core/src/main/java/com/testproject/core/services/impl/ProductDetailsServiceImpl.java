@@ -51,7 +51,7 @@ public class ProductDetailsServiceImpl implements ProductDetailsService {
                         String productName= HtmlUtils.stripOuterTag(rawProductName);
                         String rawPrice = item.path("price").asText();
                         String price= HtmlUtils.stripOuterTag(rawPrice);
-                        String rawFeatures = item.path("features").path("plaintext").asText();
+                        String rawFeatures = item.path("features").path("html").asText();
                         String features= HtmlUtils.stripOuterTag(rawFeatures);
                         String rawDescription = item.path("description").path("html").asText();
                         String description=HtmlUtils.stripOuterTag(rawDescription);

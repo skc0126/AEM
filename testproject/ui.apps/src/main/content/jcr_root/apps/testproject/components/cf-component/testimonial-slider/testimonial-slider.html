@@ -1,14 +1,18 @@
 <sly data-sly-test="${wcmmode.edit}">
-    <div class="cq-placeholder" data-emptytext="${component.title || 'Drag components here'}"></div>
+    <div class="cq-placeholder" data-emptytext="${component.title || 'Testimonial Slider'}"></div>
 </sly>
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-     data-sly-call="${clientlib.all @ categories='testproject.custom'}"/>
+     data-sly-call="${clientlib.all @ categories='testproject.custom'}" />
 <sly data-sly-use.model="com.testproject.core.models.TestimonialSliderModel">
-    <div class="title-description-container">
-        <sly data-sly-list.item="${model.titleDescriptionList}">
-            <div class="title-block">
-                <h2>${item.title @ context='html'}</h2>
-                <p>${item.description @ context='html'}</p>
+    <div class="testimonial-slider">
+        <sly data-sly-list.testimonial="${model.testimonialSliderList}">
+            <div class="testimonial-card">
+                <img src="${testimonial.customerImage}" alt="${testimonial.customerName}" />
+                <h4>${testimonial.customerName}</h4>
+                <div class="testimonial-text" data-sly-unwrap>
+                    ${testimonial.testimonialText @ context='html'}
+                </div>
+                <p>Rating: ${testimonial.rating} / 5</p>
             </div>
         </sly>
     </div>

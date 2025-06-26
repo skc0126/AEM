@@ -1,15 +1,25 @@
 <sly data-sly-test="${wcmmode.edit}">
-    <div class="cq-placeholder" data-emptytext="${component.title || 'Drag components here'}"></div>
+    <div class="cq-placeholder" data-emptytext="${component.title || 'FAQ Accordion'}"></div>
 </sly>
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-    data-sly-call="${clientlib.all @ categories='testproject.custom'}" />
+     data-sly-call="${clientlib.all @ categories='testproject.custom'}" />
 <sly data-sly-use.model="com.testproject.core.models.FAQAccordionModel">
-<div class="faq-item" data-sly-list="${faqList}">
-    <div class="faq-question" onclick="this.nextElementSibling.classList.toggle('open')">
-        <h4>${item.question}</h4>
+    <div class="faq-accordion">
+        <sly data-sly-list.faq="${model.fAQAccordionList}">
+            <div class="faq-item">
+                <button class="faq-question">${faq.question}</button>
+                <div class="faq-answer" style="display:none;">
+                    ${faq.answer @ context='html'}
+                </div>
+            </div>
+        </sly>
     </div>
-    <div class="faq-answer">
-        ${item.answer @ context='html'}
-    </div>
-</div>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    </script>
 </sly>

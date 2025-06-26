@@ -1,5 +1,4 @@
 package com.testproject.core.models.impl;
-import com.testproject.core.models.ProductDetailsModel;
 import com.testproject.core.models.TestimonialSliderModel;
 import com.testproject.core.services.TestimonialSliderService;
 import org.apache.sling.api.SlingHttpServletRequest;
