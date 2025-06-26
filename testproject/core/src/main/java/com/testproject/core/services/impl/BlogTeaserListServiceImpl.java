@@ -32,7 +32,7 @@ public class BlogTeaserListServiceImpl implements BlogTeaserListService {
     @Override
     public List<Map<String, String>> getBlogTeaserList() {
         List<Map<String, String>> list = new ArrayList<>();
-        String url = graphqlDomain.getGraphqlDomain() + "/graphql/execute.json/testproject/event-details";
+        String url = graphqlDomain.getGraphqlDomain() + "graphql/execute.json/testproject/blog-teaser-list";
         try (CloseableHttpClient httpClient = HttpClientUtil.createHttpClient(
                 graphqlDomain.getUserName(), graphqlDomain.getPassword())) {
 
@@ -45,26 +45,26 @@ public class BlogTeaserListServiceImpl implements BlogTeaserListService {
 
                 ObjectMapper mapper = new ObjectMapper();
                 JsonNode root = mapper.readTree(jsonResponse);
-                JsonNode items = root.path("data").path("eventDetailsList").path("items");
+                JsonNode items = root.path("data").path("blogTeaserListList").path("items");
 
                 if (items.isArray()) {
                     for (JsonNode item : items) {
-                        String rawEventTitle = item.path("eventTitle").asText();
-                        String eventTitle= HtmlUtils.stripOuterTag(rawEventTitle);
-                        String rawEventDate = item.path("eventDate").asText();
-                        String eventDate= HtmlUtils.stripOuterTag(rawEventDate);
-                        String rawLocation = item.path("location").asText();
-                        String location= HtmlUtils.stripOuterTag(rawLocation);
-                        String rawDescription = item.path("description").path("html").asText();
-                        String description=HtmlUtils.stripOuterTag(rawDescription);
-                        String rawEventImage = item.path("eventImage").path("_path").asText();
-                        String eventImage= HtmlUtils.stripOuterTag(rawEventImage);
+                        String rawTitle = item.path("title").asText();
+                        String title= HtmlUtils.stripOuterTag(rawTitle);
+                        String rawAuthor = item.path("author").asText();
+                        String author= HtmlUtils.stripOuterTag(rawAuthor);
+                        String rawPublishDate = item.path("publishDate").asText();
+                        String publishDate= HtmlUtils.stripOuterTag(rawPublishDate);
+                        String rawSummary = item.path("summary").path("html").asText();
+                        String summary=HtmlUtils.stripOuterTag(rawSummary);
+                        String rawThumbnail = item.path("thumbnail").path("_path").asText();
+                        String thumbnail= HtmlUtils.stripOuterTag(rawThumbnail);
                         Map<String, String> map = new HashMap<>();
-                        map.put("eventTitle", rawEventTitle);
-                        map.put("eventDate", rawEventDate);
-                        map.put("location", rawLocation);
-                        map.put("eventImage", rawEventImage);
-                        map.put("description", rawDescription);
+                        map.put("title", rawTitle);
+                        map.put("author", rawAuthor);
+                        map.put("publishDate", rawPublishDate);
+                        map.put("thumbnail", rawThumbnail);
+                        map.put("summary", rawSummary);
                         list.add(map);
                     }
                 }

@@ -32,7 +32,7 @@ public class TeamMemberProfileServiceImpl implements TeamMemberProfileService {
     @Override
     public List<Map<String, String>> getTeamMemberProfileList() {
         List<Map<String, String>> list = new ArrayList<>();
-        String url = graphqlDomain.getGraphqlDomain() + "/graphql/execute.json/testproject/event-details";
+        String url = graphqlDomain.getGraphqlDomain() + "/graphql/execute.json/testproject/team-member-profile";
         try (CloseableHttpClient httpClient = HttpClientUtil.createHttpClient(
                 graphqlDomain.getUserName(), graphqlDomain.getPassword())) {
 
@@ -45,26 +45,26 @@ public class TeamMemberProfileServiceImpl implements TeamMemberProfileService {
 
                 ObjectMapper mapper = new ObjectMapper();
                 JsonNode root = mapper.readTree(jsonResponse);
-                JsonNode items = root.path("data").path("eventDetailsList").path("items");
+                JsonNode items = root.path("data").path("teamMemberProfileList").path("items");
 
                 if (items.isArray()) {
                     for (JsonNode item : items) {
-                        String rawEventTitle = item.path("eventTitle").asText();
-                        String eventTitle= HtmlUtils.stripOuterTag(rawEventTitle);
-                        String rawEventDate = item.path("eventDate").asText();
-                        String eventDate= HtmlUtils.stripOuterTag(rawEventDate);
-                        String rawLocation = item.path("location").asText();
-                        String location= HtmlUtils.stripOuterTag(rawLocation);
-                        String rawDescription = item.path("description").path("html").asText();
-                        String description=HtmlUtils.stripOuterTag(rawDescription);
-                        String rawEventImage = item.path("eventImage").path("_path").asText();
-                        String eventImage= HtmlUtils.stripOuterTag(rawEventImage);
+                        String rawName = item.path("name").asText();
+                        String name= HtmlUtils.stripOuterTag(rawName);
+                        String rawDesignation = item.path("designation").asText();
+                        String designation= HtmlUtils.stripOuterTag(rawDesignation);
+                        String rawSocialLinks = item.path("socialLinks").asText();
+                        String socialLinks= HtmlUtils.stripOuterTag(rawSocialLinks);
+                        String rawBio = item.path("bio").path("html").asText();
+                        String bio=HtmlUtils.stripOuterTag(rawBio);
+                        String rawProfileImage = item.path("profileImage").path("_path").asText();
+                        String profileImage= HtmlUtils.stripOuterTag(rawProfileImage);
                         Map<String, String> map = new HashMap<>();
-                        map.put("eventTitle", rawEventTitle);
-                        map.put("eventDate", rawEventDate);
-                        map.put("location", rawLocation);
-                        map.put("eventImage", rawEventImage);
-                        map.put("description", rawDescription);
+                        map.put("name", rawName);
+                        map.put("designation", rawDesignation);
+                        map.put("socialLinks", rawSocialLinks);
+                        map.put("profileImage", rawProfileImage);
+                        map.put("bio", rawBio);
                         list.add(map);
                     }
                 }
