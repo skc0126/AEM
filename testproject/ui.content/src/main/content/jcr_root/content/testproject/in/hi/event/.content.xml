@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:mixinTypes="[mix:lockable,mix:referenceable]"
+    jcr:primaryType="cq:Page"
+    jcr:uuid="835dee9a-c4ba-4c3d-adb0-ad44ed30a49b">
+    <jcr:content
+        cq:isDelivered="{Boolean}false"
+        cq:isTransCreated="{Boolean}true"
+        cq:languageRoot="hi"
+        cq:lastModified="{Date}2025-06-11T17:49:44.141+05:30"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2025-06-11T17:54:48.308+05:30"
+        cq:lastReplicated_publish="{Date}2025-06-11T17:54:48.308+05:30"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicatedBy_publish="admin"
+        cq:lastReplicationAction="Activate"
+        cq:lastReplicationAction_publish="Activate"
+        cq:lastRolledout="{Date}2025-06-11T17:49:44.144+05:30"
+        cq:lastRolledoutBy="admin"
+        cq:lastTranslationDone="{Date}2025-06-11T17:43:02.189+05:30"
+        cq:lastTranslationUpdate="{Date}2025-06-11T17:26:17.709+05:30"
+        cq:template="/conf/testproject/settings/wcm/templates/event-details"
+        cq:translationJob="[/content/projects/hindi/hindi/jcr:content/dashboard/gadgets/translationjob]"
+        cq:translationMethod="MACHINE_TRANSLATION"
+        cq:translationProviderCloudConfig="/conf/testproject/settings/cloudconfigs/translation/msft-translation/default-translator"
+        cq:translationProviderName="microsoft"
+        cq:translationSourcePath="/content/testproject/language-master/en/event"
+        cq:translationSourceUUID="{WeakReference}5e2b4a36-68b1-409b-92df-730c70607416"
+        cq:translationStatus="ERROR_UPDATE"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:LiveRelationship,cq:ReplicationStatus2,mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Event"
+        jcr:uuid="2ff10e26-5b80-4115-b2b5-52019fac2b2c"
+        sling:resourceType="testproject/components/page">
+        <root
+            cq:lastRolledout="{Date}2025-06-11T17:49:44.114+05:30"
+            cq:lastRolledoutBy="admin"
+            jcr:mixinTypes="[cq:LiveRelationship]"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="testproject/components/core-component/container"
+            layout="responsiveGrid">
+            <container
+                cq:lastRolledout="{Date}2025-06-11T17:49:44.117+05:30"
+                cq:lastRolledoutBy="admin"
+                jcr:mixinTypes="[cq:LiveRelationship]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="testproject/components/core-component/container"
+                layout="responsiveGrid">
+                <container
+                    cq:lastRolledout="{Date}2025-06-11T17:49:44.120+05:30"
+                    cq:lastRolledoutBy="admin"
+                    jcr:mixinTypes="[cq:LiveRelationship]"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="testproject/components/core-component/container">
+                    <herobanner_copy
+                        cq:lastRolledout="{Date}2025-06-11T17:49:44.123+05:30"
+                        cq:lastRolledoutBy="admin"
+                        jcr:created="{Date}2025-06-10T21:34:06.832+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-06-11T17:49:44.121+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:mixinTypes="[cq:LiveRelationship]"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="testproject/components/content/herobanner">
+                        <multifield
+                            cq:lastRolledout="{Date}2025-06-11T17:49:44.131+05:30"
+                            cq:lastRolledoutBy="admin"
+                            jcr:mixinTypes="[cq:LiveRelationship]"
+                            jcr:primaryType="nt:unstructured">
+                            <item0
+                                cq:lastRolledout="{Date}2025-06-11T17:49:44.136+05:30"
+                                cq:lastRolledoutBy="admin"
+                                jcr:mixinTypes="[cq:LiveRelationship]"
+                                jcr:primaryType="nt:unstructured"
+                                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+                                imageAltText="City"
+                                imagePath="/content/dam/testproject/language-master/City.jpeg"
+                                shortdescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
+                            <item1
+                                cq:lastRolledout="{Date}2025-06-11T17:49:44.139+05:30"
+                                cq:lastRolledoutBy="admin"
+                                jcr:mixinTypes="[cq:LiveRelationship]"
+                                jcr:primaryType="nt:unstructured"
+                                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+                                imageAltText="Animal"
+                                imagePath="/content/dam/testproject/language-master/Animals.png"
+                                shortdescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
+                            <item2
+                                cq:lastRolledout="{Date}2025-06-11T17:49:44.142+05:30"
+                                cq:lastRolledoutBy="admin"
+                                jcr:mixinTypes="[cq:LiveRelationship]"
+                                jcr:primaryType="nt:unstructured"
+                                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+                                imageAltText="Sports"
+                                imagePath="/content/dam/testproject/language-master/Sports.png"
+                                shortdescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
+                        </multifield>
+                    </herobanner_copy>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

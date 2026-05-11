@@ -1,0 +1,11 @@
+query{
+		playerDatabaseList{
+      items{
+        name
+        age
+        position
+        clubsPlayed
+        country
+      }
+    }
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="b576fd9c-0a80-41f9-bd3f-ce6471466100">
+    <jcr:content
+        cq:isDelivered="{Boolean}false"
+        cq:lastReplicated="{Date}2025-06-04T12:03:36.773+05:30"
+        cq:lastReplicated_publish="{Date}2025-06-04T12:03:36.773+05:30"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicatedBy_publish="admin"
+        cq:lastReplicationAction="Activate"
+        cq:lastReplicationAction_publish="Activate"
+        cq:name="will-jack"
+        cq:parentPath="/content/dam/testproject/content-fragment/language-master"
+        jcr:lastModified="{Date}2025-06-04T11:52:03.780+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:ReplicationStatus,cq:ReplicationStatus2]"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Will Jack"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2025-06-04T11:52:03.780+05:30">
+        <data
+            cq:model="/conf/testproject/settings/dam/cfm/models/player-database"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                age="35"
+                age_x0040_LastModified="{Date}2025-06-04T11:52:03.759+05:30"
+                age_x0040_LastModifiedBy="admin"
+                clubsPlayed="[RCB,PK]"
+                clubsPlayed_x0040_LastModified="{Date}2025-06-04T11:52:03.760+05:30"
+                clubsPlayed_x0040_LastModifiedBy="admin"
+                country="UK"
+                country_x0040_LastModified="{Date}2025-06-04T11:52:03.760+05:30"
+                country_x0040_LastModifiedBy="admin"
+                name="Will Jack"
+                name_x0040_LastModified="{Date}2025-06-04T11:52:03.759+05:30"
+                name_x0040_LastModifiedBy="admin"
+                position="Allrounder"
+                position_x0040_LastModified="{Date}2025-06-04T11:52:03.760+05:30"
+                position_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="e2b5e47f-f2e7-455a-b22a-5253ee049048"
+                _x0040_string_x0040_model="/conf/testproject/settings/dam/cfm/models/player-database"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_age="35"
+                string_x0040_country="UK"
+                string_x0040_name="Will Jack"
+                string_x0040_position="Allrounder"
+                stringArray_x0040_clubsPlayed="[RCB,PK]"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

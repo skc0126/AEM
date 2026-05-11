@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:mixinTypes="[mix:lockable,mix:referenceable]"
+    jcr:primaryType="cq:Page"
+    jcr:uuid="827d7e70-c47e-4c90-aca8-8f3b18f32507">
+    <jcr:content
+        cq:cloudserviceconfigs="[/libs/settings/cloudconfigs/translation/translationcfg/default_translation]"
+        cq:conf="/conf/testproject"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:isDelivered="{Boolean}false"
+        cq:isTransCreated="{Boolean}true"
+        cq:languageRoot="de"
+        cq:lastModified="{Date}2025-06-11T17:44:42.417+05:30"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicationAction_publish="Activate"
+        cq:lastTranslationDone="{Date}2025-06-11T17:44:42.417+05:30"
+        cq:lastTranslationUpdate="{Date}2025-06-11T17:42:41.119+05:30"
+        cq:template="/conf/testproject/settings/wcm/templates/page-content"
+        cq:translationJob="[/content/projects/new_translation/new_translation/jcr:content/dashboard/gadgets/translationjob0]"
+        cq:translationMethod="MACHINE_TRANSLATION"
+        cq:translationProject="[/content/projects/new_translation/new_translation]"
+        cq:translationProviderCloudConfig="/conf/testproject/settings/cloudconfigs/translation/msft-translation/default-translator"
+        cq:translationProviderName="microsoft"
+        cq:translationSourcePath="/content/testproject/language-master/en"
+        cq:translationSourceUUID="{WeakReference}7258032e-39d8-405b-baa6-f445a977c5d9"
+        cq:translationStatus="ERROR_UPDATE"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:ReplicationStatus2,mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="German"
+        jcr:uuid="9e85ed47-f008-411d-b8c9-c39663ac2004"
+        sling:resourceType="testproject/components/page"
+        pageTitle="Test Project"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="testproject/components/core-component/core-component/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="testproject/components/core-component/core-component/container">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="testproject/components/core-component/core-component/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="testproject/components/core-component/container"
+                    layout="responsiveGrid">
+                    <herobanner
+                        jcr:created="{Date}2025-06-10T21:34:06.832+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-06-11T15:47:05.713+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="testproject/components/content/herobanner">
+                        <multifield jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+                                imageAltText="City"
+                                imagePath="/content/dam/testproject/language-master/City.jpeg"
+                                shortdescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+                                imageAltText="Animal"
+                                imagePath="/content/dam/testproject/language-master/Animals.png"
+                                shortdescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+                                imageAltText="Sports"
+                                imagePath="/content/dam/testproject/language-master/Sports.png"
+                                shortdescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
+                        </multifield>
+                    </herobanner>
+                </container>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2025-06-11T17:26:54.540+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+    <home/>
+    <event/>
+    <article/>
+    <product/>
+    <privacy-policy/>
+    <terms-and-conditions/>
+</jcr:root>
