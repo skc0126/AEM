@@ -1,0 +1,9 @@
+{
+  "name": "publish",
+  "serviceName": "distributionService",
+  "packageBuilder.target": "org.apache.sling.distribution.packaging.impl.VaultDistributionPackageBuilderFactory",
+  "queueProvider.target": "org.apache.sling.distribution.queue.impl.JobHandlingDistributionQueueProviderFactory",
+  "transportSecretProvider.target": "org.apache.sling.distribution.transport.impl.UserCredentialsDistributionTransportSecretProviderFactory",
+  "transportUri": "http://localhost:4503/libs/sling/distribution/services/importers/publish",
+  "enabled": true
+}
