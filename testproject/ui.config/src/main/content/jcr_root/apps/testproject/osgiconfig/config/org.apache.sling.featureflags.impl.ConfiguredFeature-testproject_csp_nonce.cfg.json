@@ -1,0 +1,5 @@
+{
+  "enabled": true,
+  "name": "csp.nonce.enabled",
+  "description": "Feature flag for CSP Header and Nonce generation"
+}
