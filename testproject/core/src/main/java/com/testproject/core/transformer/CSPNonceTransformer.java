@@ -18,13 +18,12 @@ import org.xml.sax.helpers.AttributesImpl;
  * CSP Nonce Transformer
  */
 @Component(service = TransformerFactory.class, property = {
-        "pipeline.type=cspnoncetransformer", // must match pipeline XML
-        "pipeline.mode=global"
+        "pipeline.type=cspnoncetransformer" // must match pipeline XML
 })
 public class CSPNonceTransformer implements TransformerFactory, Transformer {
 
     private static final Logger log = LoggerFactory.getLogger(CSPNonceTransformer.class);
-    private ContentHandler contentHandler;
+    private ContentHandler handler;
     private String nonce;
     private static final String NONCE_ATTRIBUTE = "nonce";
 
@@ -32,72 +31,6 @@ public class CSPNonceTransformer implements TransformerFactory, Transformer {
     public Transformer createTransformer() {
         log.info("createTransformer() called");
         return new CSPNonceTransformer();
-    }
-
-    @Override
-    public void setDocumentLocator(Locator locator) {
-        log.info("setDocumentLocator() called");
-        throw new UnsupportedOperationException("Unimplemented method 'setDocumentLocator'");
-    }
-
-    @Override
-    public void startDocument() throws SAXException {
-        log.info("startDocument() called");
-        throw new UnsupportedOperationException("Unimplemented method 'startDocument'");
-    }
-
-    @Override
-    public void endDocument() throws SAXException {
-        log.info("endDocument() called");
-        throw new UnsupportedOperationException("Unimplemented method 'endDocument'");
-    }
-
-    @Override
-    public void startPrefixMapping(String prefix, String uri) throws SAXException {
-        log.info("startPrefixMapping() called with prefix={}, uri={}", prefix, uri);
-        throw new UnsupportedOperationException("Unimplemented method 'startPrefixMapping'");
-    }
-
-    @Override
-    public void endPrefixMapping(String prefix) throws SAXException {
-        log.info("endPrefixMapping() called with prefix={}", prefix);
-        throw new UnsupportedOperationException("Unimplemented method 'endPrefixMapping'");
-    }
-
-    @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
-        log.info("endElement() called for tag <{}>", localName);
-        throw new UnsupportedOperationException("Unimplemented method 'endElement'");
-    }
-
-    @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
-        log.info("characters() called with length={}", length);
-        throw new UnsupportedOperationException("Unimplemented method 'characters'");
-    }
-
-    @Override
-    public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
-        log.info("ignorableWhitespace() called with length={}", length);
-        throw new UnsupportedOperationException("Unimplemented method 'ignorableWhitespace'");
-    }
-
-    @Override
-    public void processingInstruction(String target, String data) throws SAXException {
-        log.info("processingInstruction() called with target={}, data={}", target, data);
-        throw new UnsupportedOperationException("Unimplemented method 'processingInstruction'");
-    }
-
-    @Override
-    public void skippedEntity(String name) throws SAXException {
-        log.info("skippedEntity() called with name={}", name);
-        throw new UnsupportedOperationException("Unimplemented method 'skippedEntity'");
-    }
-
-    @Override
-    public void setContentHandler(ContentHandler handler) {
-        log.info("setContentHandler() called");
-        this.contentHandler = handler;
     }
 
     @Override
@@ -113,6 +46,12 @@ public class CSPNonceTransformer implements TransformerFactory, Transformer {
     }
 
     @Override
+    public void setContentHandler(ContentHandler handler) {
+        log.info("setContentHandler() called");
+        this.handler = handler;
+    }
+
+    @Override
     public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
         log.info("startElement() called for tag <{}>", localName);
         String tag = localName.toLowerCase();
@@ -121,16 +60,65 @@ public class CSPNonceTransformer implements TransformerFactory, Transformer {
         if (shouldApplyNonce) {
             AttributesImpl newAtts = new AttributesImpl(atts);
             newAtts.addAttribute("", NONCE_ATTRIBUTE, NONCE_ATTRIBUTE, "CDATA", nonce);
-            contentHandler.startElement(uri, localName, qName, newAtts);
+            handler.startElement(uri, localName, qName, newAtts);
             log.debug("Added nonce attribute to <{}> tag", localName);
             return;
         }
-        contentHandler.startElement(uri, localName, qName, atts);
+        handler.startElement(uri, localName, qName, atts);
+    }
+
+    @Override
+    public void setDocumentLocator(Locator locator) {
+        handler.setDocumentLocator(locator);
+    }
+
+    @Override
+    public void startDocument() throws SAXException {
+        handler.startDocument();
+    }
+
+    @Override
+    public void endDocument() throws SAXException {
+        handler.endDocument();
+    }
+
+    @Override
+    public void startPrefixMapping(String prefix, String uri) throws SAXException {
+        handler.startPrefixMapping(prefix, uri);
+    }
+
+    @Override
+    public void endPrefixMapping(String prefix) throws SAXException {
+        handler.endPrefixMapping(prefix);
+    }
+
+    @Override
+    public void endElement(String uri, String localName, String qName) throws SAXException {
+        handler.endElement(uri, localName, qName);
+    }
+
+    @Override
+    public void characters(char[] ch, int start, int length) throws SAXException {
+        handler.characters(ch, start, length);
+    }
+
+    @Override
+    public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
+        handler.ignorableWhitespace(ch, start, length);
+    }
+
+    @Override
+    public void processingInstruction(String target, String data) throws SAXException {
+        handler.processingInstruction(target, data);
+    }
+
+    @Override
+    public void skippedEntity(String name) throws SAXException {
+        handler.skippedEntity(name);
     }
 
     @Override
     public void dispose() {
-        log.info("dispose() called");
-        throw new UnsupportedOperationException("Unimplemented method 'dispose'");
+        log.debug("dispose() called");
     }
 }
