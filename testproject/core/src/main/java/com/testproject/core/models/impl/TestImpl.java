@@ -28,19 +28,16 @@ public class TestImpl implements Test {
 
     @Override
     public String getFirstName() {
-        // TODO Auto-generated method stub
         return fname;
     }
 
     @Override
     public String getLastName() {
-        // TODO Auto-generated method stub
         return lname;
     }
 
     @Override
     public boolean getProfessor() {
-        // TODO Auto-generated method stub
         return professor;
     }
 

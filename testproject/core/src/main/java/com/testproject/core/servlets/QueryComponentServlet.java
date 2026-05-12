@@ -15,7 +15,6 @@ import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
 import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.propertytypes.ServiceDescription;
 
 import javax.jcr.RepositoryException;
@@ -68,7 +67,6 @@ public class QueryComponentServlet extends SlingAllMethodsServlet {
             e.printStackTrace();
 
         } catch (RepositoryException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } finally {
             if (session != null) {

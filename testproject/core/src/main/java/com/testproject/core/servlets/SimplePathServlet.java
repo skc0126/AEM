@@ -22,7 +22,6 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import java.io.IOException;
-import java.io.IOException;
 import java.util.Iterator;
 
 @Component(service = Servlet.class)

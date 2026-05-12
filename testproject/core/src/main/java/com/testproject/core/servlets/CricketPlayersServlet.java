@@ -97,10 +97,8 @@ public class CricketPlayersServlet extends SlingAllMethodsServlet {
 			resp.setContentType("application/json");
 			resp.getWriter().write(resultArray.toString());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (RepositoryException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if (session != null) {

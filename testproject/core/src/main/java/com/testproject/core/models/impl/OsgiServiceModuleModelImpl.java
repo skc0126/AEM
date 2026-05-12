@@ -1,6 +1,5 @@
 package com.testproject.core.models.impl;
 
-import com.testproject.core.models.OsgiServiceModel;
 import com.testproject.core.models.OsgiServiceModuleModel;
 import com.testproject.core.services.OSGiConfigModule;
 import org.apache.sling.api.SlingHttpServletRequest;

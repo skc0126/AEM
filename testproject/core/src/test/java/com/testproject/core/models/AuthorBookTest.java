@@ -1,30 +1,13 @@
 package com.testproject.core.models;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
-
-import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.models.factory.ModelFactory;
-
-
-import org.apache.sling.models.annotations.*;
-
-import org.apache.sling.testing.mock.sling.MockSling;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 
-import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 
 @ExtendWith(AemContextExtension.class)
 public class AuthorBookTest {

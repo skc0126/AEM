@@ -48,7 +48,6 @@ public class SimpleComponentServlet extends SlingAllMethodsServlet {
             //response.getWriter().write("Header From Post Servlet: " + node.getProperty("header").getString());
             response.getWriter().write("Status Flag " + statusFlag);
         } catch (RepositoryException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         

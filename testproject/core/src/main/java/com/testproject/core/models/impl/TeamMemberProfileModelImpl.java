@@ -1,7 +1,5 @@
 package com.testproject.core.models.impl;
-import com.testproject.core.models.ProductDetailsModel;
 import com.testproject.core.models.TeamMemberProfileModel;
-import com.testproject.core.services.ProductDetailsService;
 import com.testproject.core.services.TeamMemberProfileService;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
