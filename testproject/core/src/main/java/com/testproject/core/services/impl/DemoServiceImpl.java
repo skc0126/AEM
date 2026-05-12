@@ -35,7 +35,6 @@ public class DemoServiceImpl implements DemoService {
             return pages;
 
         } catch (LoginException e) {
-            // TODO: handle exception
            log.info("Exception occured while getting pages" + e.getMessage());
         }
         return null;

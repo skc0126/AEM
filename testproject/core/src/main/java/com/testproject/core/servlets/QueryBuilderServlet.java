@@ -69,7 +69,6 @@ public class QueryBuilderServlet extends SlingAllMethodsServlet {
             e.printStackTrace();
 
         } catch (RepositoryException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } finally {
             if (session != null) {

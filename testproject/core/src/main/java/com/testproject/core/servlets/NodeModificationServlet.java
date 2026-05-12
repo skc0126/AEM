@@ -49,7 +49,6 @@ public class NodeModificationServlet extends SlingAllMethodsServlet {
             }
             
         } catch (RepositoryException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         response.setContentType("text/plain");

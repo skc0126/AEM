@@ -2,13 +2,10 @@ package com.testproject.core.servlets;
 
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
-import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
 
-import com.testproject.core.utils.MyServiceUser;
 import com.adobe.granite.workflow.WorkflowException;
 import com.adobe.granite.workflow.WorkflowSession;
 import com.adobe.granite.workflow.exec.WorkflowData;
@@ -37,7 +34,6 @@ public class TriggerWorkflowServlet extends SlingSafeMethodsServlet {
                     WorkflowData workflowData = workflowSession.newWorkflowData("JCR_PATH",payload);
                     status = workflowSession.startWorkflow(workflowModel,workflowData).getState();
                 } catch (WorkflowException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }   
                 response.setContentType("text/plain");      

@@ -77,7 +77,6 @@ class CSPNonceTransformer extends AbstractSAXPipe implements Transformer {
 
     @Override
     public void dispose() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'dispose'");
     }
 }
