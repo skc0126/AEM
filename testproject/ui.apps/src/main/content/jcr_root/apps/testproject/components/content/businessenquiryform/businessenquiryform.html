@@ -1,30 +1,44 @@
 <sly data-sly-test="${wcmmode.edit}">
-    <div class="cq-placeholder" data-emptytext="${component.title || 'Drag components here'}"></div>
+    <div class="cq-placeholder" data-emptytext="${component.title || 'Business Enquiry Form'}"></div>
 </sly>
 <sly data-sly-use.model="com.testproject.core.models.BusinessEnquiryFormModel">
 
 <div class="business-enquiry-form">
-    <form id="enquiryForm" method="post" action="${resource.path @ context='script'}">
+    <h2>Business Enquiry Form</h2>
+    <p class="form-description">Please share your business inquiry details with us. We'll get back to you shortly.</p>
+    
+    <form id="enquiryForm" method="post" action="/bin/businessenquiry">
         <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required/>
+            <label for="name">Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required/>
+            <span class="error-message" id="name-error"></span>
         </div>
+
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required/>
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required/>
+            <span class="error-message" id="email-error"></span>
         </div>
+
         <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="text" id="phone" name="phone"/>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"/>
+            <span class="error-message" id="phone-error"></span>
         </div>
+
         <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea id="message" name="message" placeholder="Tell us about your inquiry..." rows="5" required></textarea>
+            <span class="error-message" id="message-error"></span>
         </div>
-        <button type="submit">Submit</button>
+
+        <button type="submit">Submit Enquiry</button>
     </form>
+
     <div id="formResponse"></div>
 </div>
+
 </sly>
+
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientlib.all @ categories='testproject.biq.form'}"/>

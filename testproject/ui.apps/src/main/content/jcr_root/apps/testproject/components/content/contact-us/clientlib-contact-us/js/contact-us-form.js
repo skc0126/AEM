@@ -1,5 +1,5 @@
 /**
- * Business Enquiry Form Handler
+ * Contact Us Form Handler
  * Manages form submission, validation, and response handling
  */
 
@@ -8,20 +8,20 @@
 
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initBusinessEnquiryForm);
+        document.addEventListener('DOMContentLoaded', initContactUsForm);
     } else {
-        initBusinessEnquiryForm();
+        initContactUsForm();
     }
 
     /**
-     * Initialize the Business Enquiry form
+     * Initialize the Contact Us form
      */
-    function initBusinessEnquiryForm() {
-        const form = document.getElementById('enquiryForm');
+    function initContactUsForm() {
+        const form = document.getElementById('contactUsForm');
         const responseDiv = document.getElementById('formResponse');
 
         if (!form || !responseDiv) {
-            console.warn('Business Enquiry form elements not found');
+            console.warn('Contact Us form elements not found');
             return;
         }
 
@@ -60,7 +60,7 @@
         const responseDiv = document.getElementById('formResponse');
 
         // Clear previous response
-        responseDiv.className = '';
+        responseDiv.className = 'form-response';
         responseDiv.innerHTML = '';
         responseDiv.classList.remove('show');
 
@@ -78,7 +78,7 @@
         }
 
         // Show loading message
-        showResponse('<span class="spinner"></span>Submitting your enquiry...', 'loading', responseDiv);
+        showResponse('<span class="spinner"></span>Submitting your message...', 'loading', responseDiv);
 
         // Collect form data
         const formData = new FormData(form);
@@ -92,21 +92,25 @@
             }
         })
         .then(response => {
+            // Parse response
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.json();
         })
         .then(data => {
+            // Check for success
             if (data.success) {
                 showResponse(data.message, 'success', responseDiv);
                 form.reset();
+                // Clear any error states
                 form.querySelectorAll('.error').forEach(field => {
                     field.classList.remove('error');
                 });
+                // Scroll to response
                 scrollToResponse(responseDiv);
             } else {
-                showResponse(data.message || 'Failed to submit enquiry. Please try again.', 'error', responseDiv);
+                showResponse(data.message || 'Failed to submit form. Please try again.', 'error', responseDiv);
             }
         })
         .catch(error => {
@@ -140,9 +144,10 @@
 
         // Field-specific validation
         switch(fieldName) {
-            case 'name':
+            case 'firstName':
+            case 'lastName':
                 if (fieldValue.length < 2) {
-                    showFieldError(field, 'Name must be at least 2 characters');
+                    showFieldError(field, 'Must be at least 2 characters');
                     isValid = false;
                 }
                 if (!/^[a-zA-Z\s'-]+$/.test(fieldValue)) {
@@ -161,6 +166,13 @@
             case 'phone':
                 if (fieldValue && !/^[\d\s\-\+\(\)]+$/.test(fieldValue)) {
                     showFieldError(field, 'Please enter a valid phone number');
+                    isValid = false;
+                }
+                break;
+
+            case 'subject':
+                if (fieldValue.length < 3) {
+                    showFieldError(field, 'Subject must be at least 3 characters');
                     isValid = false;
                 }
                 break;
@@ -204,7 +216,7 @@
      * Show response message
      */
     function showResponse(message, type, responseDiv) {
-        responseDiv.className = 'show ' + type;
+        responseDiv.className = 'form-response show ' + type;
         responseDiv.innerHTML = message;
     }
 

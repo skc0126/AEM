@@ -1,6 +1,11 @@
-/* Business Enquiry Form Styling */
+/* Contact Us Form Styling */
 
-.business-enquiry-form {
+.contact-us-form-wrapper {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.contact-us-form-container {
     max-width: 700px;
     margin: 0 auto;
     padding: 40px;
@@ -9,7 +14,7 @@
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
-.business-enquiry-form h2 {
+.form-title {
     font-size: 28px;
     font-weight: 700;
     color: #2c3e50;
@@ -17,7 +22,7 @@
     text-align: center;
 }
 
-.business-enquiry-form .form-description {
+.form-description {
     font-size: 14px;
     color: #555;
     text-align: center;
@@ -25,31 +30,41 @@
     line-height: 1.6;
 }
 
-.business-enquiry-form form {
+.contact-us-form {
     display: flex;
     flex-direction: column;
 }
 
-.business-enquiry-form .form-group {
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     margin-bottom: 20px;
+}
+
+.form-row.full-width {
+    grid-template-columns: 1fr;
+}
+
+.form-group {
     display: flex;
     flex-direction: column;
 }
 
-.business-enquiry-form label {
+.form-group label {
     font-weight: 600;
     margin-bottom: 8px;
     color: #2c3e50;
     font-size: 14px;
 }
 
-.business-enquiry-form label .required {
+.form-group label .required {
     color: #e74c3c;
     margin-left: 3px;
 }
 
-.business-enquiry-form input,
-.business-enquiry-form textarea {
+.form-group input,
+.form-group textarea {
     padding: 12px 15px;
     border: 2px solid #bdc3c7;
     border-radius: 5px;
@@ -59,43 +74,50 @@
     background-color: #fff;
 }
 
-.business-enquiry-form input:focus,
-.business-enquiry-form textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
     outline: none;
     border-color: #3498db;
     box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
     background-color: #f9f9f9;
 }
 
-.business-enquiry-form input::placeholder,
-.business-enquiry-form textarea::placeholder {
+.form-group input::placeholder,
+.form-group textarea::placeholder {
     color: #95a5a6;
 }
 
-.business-enquiry-form textarea {
+.form-group textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 150px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.business-enquiry-form .error-message {
+.error-message {
     color: #e74c3c;
     font-size: 12px;
     margin-top: 5px;
     display: none;
 }
 
-.business-enquiry-form .error-message.show {
+.error-message.show {
     display: block;
 }
 
-.business-enquiry-form input.error,
-.business-enquiry-form textarea.error {
+.form-group input.error,
+.form-group textarea.error {
     border-color: #e74c3c;
     background-color: #fadbd8;
 }
 
-.business-enquiry-form button {
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.btn {
     padding: 12px 30px;
     border: none;
     border-radius: 5px;
@@ -105,31 +127,44 @@
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-top: 20px;
 }
 
-.business-enquiry-form button[type="submit"] {
+.btn-primary {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: #fff;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
-.business-enquiry-form button[type="submit"]:hover {
+.btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
 
-.business-enquiry-form button[type="submit"]:active {
+.btn-primary:active {
     transform: translateY(0);
 }
 
-.business-enquiry-form button[type="submit"]:disabled {
+.btn-primary:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     transform: none;
 }
 
-#formResponse {
+.btn-secondary {
+    background-color: #95a5a6;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+    transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+.form-response {
     margin-top: 20px;
     padding: 15px;
     border-radius: 5px;
@@ -138,23 +173,23 @@
     display: none;
 }
 
-#formResponse.show {
+.form-response.show {
     display: block;
 }
 
-#formResponse.success {
+.form-response.success {
     background-color: #d4edda;
     color: #155724;
     border: 1px solid #c3e6cb;
 }
 
-#formResponse.error {
+.form-response.error {
     background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
 
-#formResponse.loading {
+.form-response.loading {
     background-color: #d1ecf1;
     color: #0c5460;
     border: 1px solid #bee5eb;
@@ -179,35 +214,44 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .business-enquiry-form {
+    .contact-us-form-container {
         padding: 30px 20px;
     }
 
-    .business-enquiry-form h2 {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-title {
         font-size: 24px;
     }
 
-    .business-enquiry-form button {
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn {
         width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .business-enquiry-form {
+    .contact-us-form-container {
         padding: 20px 15px;
     }
 
-    .business-enquiry-form h2 {
+    .form-title {
         font-size: 20px;
     }
 
-    .business-enquiry-form input,
-    .business-enquiry-form textarea {
+    .form-group input,
+    .form-group textarea {
         padding: 10px 12px;
-        font-size: 16px;
+        font-size: 16px; /* Prevents zoom on iOS */
     }
 
-    .business-enquiry-form button {
+    .btn {
         padding: 10px 20px;
         font-size: 12px;
     }

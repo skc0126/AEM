@@ -1,0 +1,10 @@
+<sly data-sly-use.model="com.testproject.core.models.TitleWithSubtitleModel">
+    <div class="cmp-titlewithsubtitle">
+        <sly data-sly-test="${model.title}">
+            <h2>${model.title}</h2>
+        </sly>
+        <sly data-sly-test="${model.subtitle}">
+            <p>${model.subtitle}</p>
+        </sly>
+    </div>
+</sly>
