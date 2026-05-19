@@ -15,9 +15,6 @@
 #event-card.js
 ###############################################################################
 #base=js
-event-card.js
-servletcomponent.js
-hero-banner.js
-titleWithDescription.js
+businessenquiryform.js
 
 

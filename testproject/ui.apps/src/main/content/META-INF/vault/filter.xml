@@ -3,4 +3,8 @@
     <filter root="/apps/testproject/clientlibs"/>
     <filter root="/apps/testproject/components"/>
     <filter root="/apps/testproject/i18n"/>
+    <!-- add parent config -->
+    <filter root="/apps/testproject/config"/>
+    <!-- add rewriter -->
+    <filter root="/apps/testproject/config/rewriter"/>
 </workspaceFilter>
